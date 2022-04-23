@@ -32,20 +32,3 @@
 </div>
 
 @endsection
-
-{{-- <div
-   v-if="contacts.length > 0"
-   class="row"
->
-   <div v-for="contact in contacts" :key="contact.id" class="col-4 mb-2">
-      <contact-card :contact="contact" />
-   </div>
-</div>
-
-<div v-else>
-   Empty contact list
-</div> --}}
-
-
-
-

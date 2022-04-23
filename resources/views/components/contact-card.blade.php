@@ -9,10 +9,10 @@
             </div>
          </div>
          <div class="col-md-3">
-            <div class="btn-group-vertical">
-               <button class="btn btn-block btn-outline-secondary rounded mt-1 mb-3">
+            <div class="btn-group-vertical mt-3">
+               <a href="{{ route('contact.edit', $contact->id) }}" class="btn btn-block btn-outline-secondary rounded mb-3">
                   <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAhElEQVRIie2TwQnAIAxF35Klh3YBdxDqPh3HQdq7gj00ooi3xkvxQ0BzeD8JfJh6ZYEbWEfAHZCkIrCPgAfgrN4qm9STG+llk0sTngAvJkH+VgMeBOobM6cFz3c22vAIbNJbKGc5JnzCfwCHEpgcorWCfwpRawDKk7cGdanBewaq8KmuHlYrZbGe+TNUAAAAAElFTkSuQmCC"/>
-               </button>
+               </a>
                <form method="POST" action="{{ route('contact.destroy', $contact->id) }}">
                   @csrf
                   @method('DELETE')

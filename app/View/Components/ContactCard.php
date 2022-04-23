@@ -15,7 +15,7 @@ class ContactCard extends Component {
     /**
      * Create the component instance.
      *
-     * @param  Contact  $contact
+     * @param Contact $contact
      * @return void
      */
     public function __construct($contact) {
