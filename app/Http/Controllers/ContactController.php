@@ -38,7 +38,7 @@ class ContactController extends Controller {
         $request->validate([
             'name' => 'required|min:5',
             'email' => 'required|email|unique:contacts,email',
-            'contact' => 'required|min:9|max:9|unique:contacts,contact'
+            'contact' => 'required|integer|min:9|max:9|unique:contacts,contact'
         ]);
 
         $contact = new Contact([
@@ -64,7 +64,7 @@ class ContactController extends Controller {
         $request->validate([
             'name' => 'required|min:5',
             'email' => 'required|email|unique:contacts,email,'.$id,
-            'contact' => 'required|min:9|max:9|unique:contacts,contact,'.$id
+            'contact' => 'required|integer|min:9|max:9|unique:contacts,contact,'.$id
         ]);
 
         $contact = Contact::find($id);
