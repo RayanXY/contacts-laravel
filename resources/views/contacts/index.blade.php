@@ -11,21 +11,23 @@
          <a href="{{ route('contact.create') }}" class="btn btn-primary">Add Contact</a>
       </div>
    </div>
-
-   @if (count($contacts) > 0)
-      <div class="row">
-         @foreach ($contacts as $contact)
-            <p>{{ $contact->name }}</p>
-         @endforeach
-      </div>
-   @else
-      <p>No contacts available.</p>
-   @endif
-
+   
    @if (Session::has('success'))
       <div class="alert alert-success">
          {{ Session::get('success') }}
       </div>
+   @endif
+
+   @if (count($contacts) > 0)
+      <div class="row">
+         @foreach ($contacts as $contact)
+         <div class="col-4 mb-2">
+            <x-contact-card :contact="$contact" />
+         </div>
+         @endforeach
+      </div>
+   @else
+      <p>No contacts available.</p>
    @endif
 </div>
 

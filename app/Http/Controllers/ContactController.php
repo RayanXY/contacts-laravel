@@ -25,7 +25,7 @@ class ContactController extends Controller
      */
     public function store(Request $request) {
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|min:5',
             'email' => 'required|email',
             'contact' => 'required|min:9|max:9'
         ]);
@@ -39,5 +39,17 @@ class ContactController extends Controller
         $contact->save();
 
         return redirect('/')->with('success', 'Contact successfully created!');
+    }
+
+    /**
+     * Delete a existing contact
+     * 
+     * @param $id
+     */
+    public function destroy($id) {
+        $contact = Contact::find($id);
+        $contact->delete();
+
+        return redirect('/')->with('success', 'Contact successfully deleted!');
     }
 }
