@@ -8,7 +8,7 @@
          <h2>Contacts List</h2>
       </div>
       <div class="col-auto">
-         <a href="/add-contact" class="btn btn-primary">Add Contact</a>
+         <a href="{{ route('contact.create') }}" class="btn btn-primary">Add Contact</a>
       </div>
    </div>
 
@@ -20,6 +20,12 @@
       </div>
    @else
       <p>No contacts available.</p>
+   @endif
+
+   @if (Session::has('success'))
+      <div class="alert alert-success">
+         {{ Session::get('success') }}
+      </div>
    @endif
 </div>
 

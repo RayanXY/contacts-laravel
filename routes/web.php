@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +14,5 @@ use App\Http\Controllers\ContactsController;
 |
 */
 
-Route::get('/', [ContactsController::class, 'index']);
+Route::get('/', [ContactController::class, 'index']);
+Route::resource('contact', ContactController::class);
