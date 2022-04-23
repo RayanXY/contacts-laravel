@@ -14,5 +14,9 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/', [ContactController::class, 'index']);
-Route::resource('contact', ContactController::class);
+Route::get('/', [ContactController::class, 'index'])->name('contact.index');
+Route::resource('contact', ContactController::class)->except(['index'])->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
